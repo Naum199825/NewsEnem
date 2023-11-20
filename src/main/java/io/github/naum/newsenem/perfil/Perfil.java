@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package io.github.fml.newsenem;
+package io.github.naum.newsenem.perfil;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -92,12 +92,38 @@ public class Perfil implements Serializable {
         this.senha = senha;
     }
 
+    public Byte getIdade() {
+        return idade;
+    }
+
+    public void setIdade(Byte idade) {
+        this.idade = idade;
+    }
+
+    public Usuario getTipoUser() {
+        return TipoUser;
+    }
+
+    public void setTipoUser(Usuario TipoUser) {
+        this.TipoUser = TipoUser;
+    }
+    
+    
+
 //</editor-fold>
     
-    private void CadastrarUser(){
+    public void CadastrarUser(){
         
     }
    
+    public void login(){
+        
+    }
+    
+    public void recuperarConta(String email){
+        
+    }
+    
    
     
 }

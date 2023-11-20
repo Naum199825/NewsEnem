@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package io.github.fml.newsenem;
+package io.github.naum.publicacoes;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -36,6 +36,8 @@ public class Publicacao implements Serializable {
     private boolean editada;
     
     private Secao TipoSecao;
+    
+    private String acsso;
     
     
     public enum Secao{
@@ -113,10 +115,25 @@ public class Publicacao implements Serializable {
     public void setLinkTwitter(String linkTwitter) {
         this.linkTwitter = linkTwitter;
     }
+
+    public String getAcsso() {
+        return acsso;
+    }
+
+    public void setAcsso(String acsso) {
+        this.acsso = acsso;
+    }
     
     
     
 //</editor-fold>
 
+   public void cadastarPubli(){
+       
+   }
+   
+   public void editarPubli(){
+       
+   }
    
 }
