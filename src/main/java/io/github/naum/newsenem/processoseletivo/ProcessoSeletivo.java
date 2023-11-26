@@ -2,14 +2,22 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package io.github.fml.newsenem;
+package io.github.naum.newsenem.processoseletivo;
 
+import io.github.fml.newsenem.Resultados;
+import io.github.naum.newsenem.perfil.Perfil;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -25,15 +33,21 @@ public class ProcessoSeletivo implements Serializable {
     
     private String edicao;
     
-    private LocalTime dataini;
+    private LocalDate dataini;
     
-    private LocalTime datafim;
+    private LocalDate datafim;
     
     private boolean ativo;
+    
+    @ManyToMany(mappedBy = "participa")
+    private List<Perfil> participantes;
+    
+    @OneToOne(cascade = CascadeType.ALL)
+    private Resultados results;
 
     public ProcessoSeletivo() {
+        participantes = new ArrayList<>();
     }
-    
     
     
    //<editor-fold defaultstate="collapsed" desc="Getters and Setters">
@@ -53,19 +67,19 @@ public class ProcessoSeletivo implements Serializable {
         this.edicao = edicao;
     }
 
-    public LocalTime getDataini() {
+    public LocalDate getDataini() {
         return dataini;
     }
 
-    public void setDataini(LocalTime dataini) {
+    public void setDataini(LocalDate dataini) {
         this.dataini = dataini;
     }
 
-    public LocalTime getDatafim() {
+    public LocalDate getDatafim() {
         return datafim;
     }
 
-    public void setDatafim(LocalTime datafim) {
+    public void setDatafim(LocalDate datafim) {
         this.datafim = datafim;
     }
 
@@ -76,9 +90,22 @@ public class ProcessoSeletivo implements Serializable {
     public void setAtivo(boolean ativo) {
         this.ativo = ativo;
     }
-//</editor-fold>
-    
+      public List<Perfil> getParticipantes() {
+        return participantes;
+    }
 
+    public void setParticipantes(List<Perfil> participantes) {
+        this.participantes = participantes;
+    }
+
+    public Resultados getResults() {
+        return results;
+    }
+
+    public void setResults(Resultados results) {
+        this.results = results;
+    }
     
+//</editor-fold>
     
 }

@@ -23,5 +23,19 @@ public class PerfilService implements PerfilServiceLocal {
         emPerfil.persist(perfil);
     }
     
+    @Override
+    public void remove(Perfil perfil) {
+        emPerfil.remove(perfil);
+    }
+
+    @Override
+    public void update(Perfil perfil) {
+        emPerfil.merge(perfil);
+    }
+
+    @Override
+    public void findbyID(Long id) {
+        emPerfil.find(Perfil.class, id);
+    }
     
 }

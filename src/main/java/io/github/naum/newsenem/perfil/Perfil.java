@@ -4,14 +4,26 @@
  */
 package io.github.naum.newsenem.perfil;
 
+import io.github.naum.newsenem.processoseletivo.ProcessoSeletivo;
+import io.github.naum.publicacoes.Publicacao;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+import javax.json.bind.annotation.JsonbTransient;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 
 /**
@@ -37,8 +49,21 @@ public class Perfil implements Serializable {
     
     private String senha;
     
+    private LocalDateTime datacriada;
+    
     @Enumerated(EnumType.ORDINAL)
     private Usuario TipoUser;
+    
+    
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "adm")
+    private List<Publicacao> publis;
+    
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "participantes",
+            joinColumns = @JoinColumn(name = "perfil_id"),
+            inverseJoinColumns = @JoinColumn(name = "processoseletivo_id")
+            )
+    private List<ProcessoSeletivo> participa;
     
     public enum Usuario{
         Administrador,
@@ -48,6 +73,9 @@ public class Perfil implements Serializable {
     }
 
     public Perfil() {
+        publis = new ArrayList<>();
+        participa = new ArrayList<>();
+        
     }
     
     
@@ -107,6 +135,33 @@ public class Perfil implements Serializable {
     public void setTipoUser(Usuario TipoUser) {
         this.TipoUser = TipoUser;
     }
+
+    public LocalDateTime getDatacriada() {
+        return datacriada;
+    }
+
+    public void setDatacriada(LocalDateTime datacriada) {
+        this.datacriada = datacriada;
+    }
+
+
+    public List<Publicacao> getPublis() {
+        return publis;
+    }
+
+    public void setPublis(List<Publicacao> publis) {
+        this.publis = publis;
+    }
+
+    public List<ProcessoSeletivo> getParticipa() {
+        return participa;
+    }
+
+    public void setParticipa(List<ProcessoSeletivo> participa) {
+        this.participa = participa;
+    }
+    
+    
     
     
 

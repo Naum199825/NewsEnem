@@ -4,12 +4,14 @@
  */
 package io.github.naum.publicacoes;
 
+import io.github.naum.newsenem.perfil.Perfil;
 import java.io.Serializable;
 import java.time.LocalDate;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -39,6 +41,8 @@ public class Publicacao implements Serializable {
     
     private String acsso;
     
+    @ManyToOne
+    private Perfil adm;
     
     public enum Secao{
         Noticias,
@@ -122,6 +126,14 @@ public class Publicacao implements Serializable {
 
     public void setAcsso(String acsso) {
         this.acsso = acsso;
+    }
+
+    public Perfil getAdm() {
+        return adm;
+    }
+
+    public void setAdm(Perfil adm) {
+        this.adm = adm;
     }
     
     

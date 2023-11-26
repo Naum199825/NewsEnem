@@ -4,11 +4,14 @@
  */
 package io.github.fml.newsenem;
 
+import io.github.naum.newsenem.processoseletivo.ProcessoSeletivo;
 import java.io.Serializable;
+import java.time.LocalDate;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -26,9 +29,12 @@ public class Resultados implements Serializable {
     
     private String edicao;
     
-    private Integer dataLancamento;
+    private LocalDate dataLancamento;
     
     private String Gabarito;
+    
+    @OneToOne
+    private ProcessoSeletivo prova;
 
     public Resultados() {
     }
@@ -60,11 +66,11 @@ public class Resultados implements Serializable {
         this.edicao = edicao;
     }
 
-    public Integer getDataLancamento() {
+    public LocalDate getDataLancamento() {
         return dataLancamento;
     }
 
-    public void setDataLancamento(Integer dataLancamento) {
+    public void setDataLancamento(LocalDate dataLancamento) {
         this.dataLancamento = dataLancamento;
     }
 

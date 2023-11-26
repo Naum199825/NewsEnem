@@ -22,6 +22,29 @@ public class PublicacoesService implements PublicacoesServiceLocal {
     public void salvar(Publicacao publicacao) {
         emP.persist(publicacao);
     }
+
+    @Override
+    public void remove(Publicacao publicacao) {
+        emP.remove(publicacao);
+    }
+
+    @Override
+    public void update(Publicacao publicacao) {
+        emP.merge(publicacao);
+    }
+
+    @Override
+    public void findbyID(Long id) {
+        emP.find(Publicacao.class, id);
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     
     
 

@@ -18,5 +18,11 @@ public interface PerfilServiceLocal {
 
     void salvar(Perfil perfil);
     
+    public void update(Perfil perfil);
+    
+    public void findbyID(Long id);
+
+    public void remove(Perfil perfil);
+    
     
 }
