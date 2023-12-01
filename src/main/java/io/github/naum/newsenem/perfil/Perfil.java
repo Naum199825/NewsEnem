@@ -11,8 +11,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import javax.enterprise.context.SessionScoped;
-import javax.inject.Named;
 import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -32,8 +30,6 @@ import javax.persistence.Transient;
  *
  * @author fried
  */
-//@Named
-//@SessionScoped
 @Entity
 public class Perfil implements Serializable {
 

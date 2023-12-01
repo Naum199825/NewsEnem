@@ -19,11 +19,11 @@
         <div class="login-box">
             <h2>Login</h2>
             <div class="user-box">
-                <h:inputText id="username" styleClass="input-text" value="#{perfil.email}" required="true" />
+                <h:inputText id="username" styleClass="input-text" value="#{loginBean.username}" required="true" />
                 <h:outputLabel for="username" styleClass="label-text">Username</h:outputLabel>
             </div>
             <div class="user-box">
-                <h:inputSecret id="password" styleClass="input-text" value="#{perfil.senha}" required="true" />
+                <h:inputSecret id="password" styleClass="input-text" value="#{loginBean.password}" required="true" />
                 <h:outputLabel for="password" styleClass="label-text">Password</h:outputLabel>
             </div>
             <h:commandButton styleClass="submit-button" value="Submit" action="#{loginBean.login}" />
