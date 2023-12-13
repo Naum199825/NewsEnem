@@ -5,6 +5,7 @@
 package io.github.naum.newsenem.perfil;
 
 import javax.ejb.Singleton;
+import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -13,6 +14,7 @@ import javax.persistence.PersistenceContext;
  * @author fried
  */
 @Singleton
+@Named
 public class PerfilService implements PerfilServiceLocal {
 
     @PersistenceContext

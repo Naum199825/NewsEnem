@@ -8,6 +8,7 @@ body {
     font-family: Arial, sans-serif;
     color: #fff;
     background: linear-gradient(#141e30, #243b55);
+    display: flex;
 }
 
 h1 {
@@ -30,4 +31,16 @@ a:link:hover, a:visited:hover  {
   color: #045491;
   font-weight : bold;
   text-decoration : underline;
+}
+
+/* Estilo da barra lateral esquerda */
+.sidebar {
+  width: 200px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
 }

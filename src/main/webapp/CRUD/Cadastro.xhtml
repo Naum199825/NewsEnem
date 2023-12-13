@@ -1,40 +1,43 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 <h:head>
-    <title>Cadastrar Usuario</title>
+    <title>{Cadastrar}</title>
     <h:outputStylesheet name="css/login.css"/>
 </h:head>
 <h:body>
+    <ui:composition template="./WEB-INF/Templates/template2.xhtml">
     <div class="login-box">
         <h2>Cadastro</h2>
 
-        <h:form action="/login" method="post" id="loginForm">
+        <h:form id="loginForm">
             <div class="user-box">
-                <h:inputText type="text" name="username" id="username">
-                </h:inputText>
-                <label for="username">Nome</label>
+                <h:outputLabel for="nome" value="Nome"/>
+                <h:inputText  id="nome" value="#{perfil.nome}"></h:inputText>
+            </div>
+            
+            <div class="user-box">
+                <h:outputLabel for="nascimento"/>
+                <h:inputText id="nascimento" value="#{perfil.datanasc}"></h:inputText>
+                
             </div>
             <div class="user-box">
-                <h:inputText type="date" name="nascimento" id="nascimento">
-                </h:inputText>
-                <label for="nascimento">Data de Nascimento</label>
+                <h:outputLabel for="email"/>
+                <h:inputText id="email" value="#{perfil.email}">
+                </h:inputText>            
             </div>
+            
             <div class="user-box">
-                <h:inputText type="email" name="email" id="email" pattern=".+@example\.com">
-                </h:inputText>
-                <label for="email">Email</label>
+                <h:outputLabel for="password"/>
+                <h:inputSecret id="password" value="#{perfil.senha}" required="true"> </h:inputSecret>
             </div>
-            <div class="user-box">
-                <h:inputSecret type="password" name="password" id="password" required="true">
-
-                </h:inputSecret>
-                <label for="password">Senha</label>
-            </div>
-            <h:commandButton type="submit" value="Cadastrar" />
+            <h:commandButton type="submit"
+                             action="#{perfilService.salvar(perfil)}" />
         </h:form>
 
     </div>
+   </ui:composition>
 </h:body>
 </html>
