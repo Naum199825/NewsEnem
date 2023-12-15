@@ -3,12 +3,14 @@ html {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     color: #fff;
     background: linear-gradient(#141e30, #243b55);
-    display: flex;
+
 }
 
 h1 {
@@ -35,12 +37,39 @@ a:link:hover, a:visited:hover  {
 
 /* Estilo da barra lateral esquerda */
 .sidebar {
-  width: 200px;
-  background-color: #f2f2f2;
-  padding: 20px;
+    display: flex;
+    justify-content: space-between;
+  margin: 20px;
+    align-items: center;
+
+}
+
+.sidebar ul {
+    display: flex;
+    list-style: none;
+}
+
+.sidebar ul li a{
+    margin: 20px;
+    padding: 8px;
+}
+
+.sidebar ul li a:hover{
+    color: #f6f6f6;
+    background-color: #045491;
+    /*padding: 8px;*/
+    border-radius: 8px;
 }
 
 .main-content {
-  flex: 1;
-  padding: 20px;
+  /*flex: 1;*/
+  display: flex;
+    flex-direction: column;
+  margin: 20px;
+
+}
+
+footer {
+    margin: 20px;
+    text-align: center;
 }

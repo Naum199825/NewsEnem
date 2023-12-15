@@ -14,11 +14,7 @@
 
     <h:body>
         <header>
-            <ui:insert name="top">Top</ui:insert>
-        </header>
-        
-        <main id="content" class="center_content">
-        <div class="sidebar">
+            <div class="sidebar">
                 <h2>Menu</h2>
                 <ul>
                     <li><a href="#">Home</a></li>
@@ -26,18 +22,24 @@
                     <li><a href="#">Sobre</a></li>
                     <li><a href="#">Contato</a></li>
                 </ul>
-        </div>
+            </div>
+        </header>
+        
+        <main id="content" class="center_content">
 
-                <div class="main-content">
-                    <h1>News Enem</h1>
-                    <nav>
+            <div class="main-content">
+                <h1>News Enem</h1>
+                <nav>
                     <ul>
                         <li><a href="#">Home</a></li>
-                        <li><a href="../../CRUD/Cadastro.xhtml">Notícias</a></li>
+                        <li><a href="../../CRUD/Cadastro.xhtml">Cadastro</a></li>
+                        <li><a href="../../CRUD/Atualiza.xhtml">Atualizar</a></li>
+                        <li><a href="../../CRUD/Busca.xhtml">Buscar</a></li>
+                        <li><a href="../../Login/login.xhtml">Login</a></li>
                         <li><a href="#">Sobre</a></li>
                         <li><a href="#">Contato</a></li>
                     </ul>
-                    </nav>
+                </nav>
 
                 <h2>Últimas Notícias</h2>
                 <!-- Aqui você pode listar suas últimas notícias -->
@@ -50,11 +52,11 @@
                 <ul>
                     <!-- Adicione suas notícias populares aqui -->
                 </ul>
-        </div>
-             </main>
+            </div>
+        </main>
 
         <footer>
-            <ui:insert name="bottom"><p>Rodapé - © 2023 News Enem Corporation</p></ui:insert>
+            <ui:insert name="Rodapé - © 2023 News Enem Corporation"><p>Rodapé - © 2023 News Enem Corporation</p></ui:insert>
         </footer>
 
     </h:body>
