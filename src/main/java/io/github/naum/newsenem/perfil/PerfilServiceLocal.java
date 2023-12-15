@@ -6,6 +6,7 @@ package io.github.naum.newsenem.perfil;
 
 import javax.ejb.Local;
 import javax.persistence.PersistenceContext;
+import java.util.List;
 
 /**
  *
@@ -23,6 +24,6 @@ public interface PerfilServiceLocal {
     public void findbyID(Long id);
 
     public void remove(Perfil perfil);
-    
-    
+
+    public List<Perfil> BuscarPessoas();
 }

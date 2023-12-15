@@ -8,6 +8,8 @@ import javax.ejb.Singleton;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import java.util.List;
 
 /**
  *
@@ -39,5 +41,10 @@ public class PerfilService implements PerfilServiceLocal {
     public void findbyID(Long id) {
         emPerfil.find(Perfil.class, id);
     }
-    
+
+    @Override
+    public List<Perfil> BuscarPessoas() {
+        Query q = emPerfil.createQuery("SELECT p FROM Perfil p");
+        return (List<Perfil>) q.getResultList();
+    }
 }
